@@ -1,0 +1,21 @@
+<%= link_to "Home", root_path %>
+<h1>Carts#show</h1>
+<p>Find me in app/views/carts/show.html.erb</p>
+
+<ul>
+  <% @cart.cart_products.each do |cp| %>
+    <li> Product: <%= cp.product.name %>  Price: <%= cp.product.price %> Quantity<%= cp.quantity%></li>
+
+    <ul>
+      <li>
+        <%= link_to "Add one", cart_product_add_path(:id => cp) %>
+        <%= link_to "Reduce one", cart_product_reduce_path(:id => cp)%>
+      </li>
+      <li>
+        <%= button_to "Remove item", cart_product_path(cp), method: :delete %>
+      </li>
+    </ul>
+  <%end%>
+
+
+</ul>

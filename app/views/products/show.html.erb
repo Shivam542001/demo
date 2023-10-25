@@ -1,0 +1,18 @@
+<%= link_to "Home", root_path %><br>
+Showing Product
+<br>
+id: <%= @product.id %>
+<br>
+name: <%= @product.name %>
+<br>
+desc: <%= @product.description%>
+<br>
+
+
+<%if current_user.admin? %>
+<%= link_to "Edit", edit_product_path(@product) %>
+<% else %>
+
+<%= button_to "add to cart", cart_products_path(:product_id => @product.id) %>
+
+<%end %>
