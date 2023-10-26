@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  get 'orders/index'
-  get 'orders/show'
-  get 'orders/new'
+
+  # get 'orders/index'
+  # get 'orders/show'
+  # get 'orders/new'
+  # post 'orders/new', to: "orders#create"
+
+
   get 'carts/show'
   root 'users#home'
+
   devise_for :users
 
   resources :users
