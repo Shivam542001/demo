@@ -18,7 +18,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_26_051316) do
     t.integer "quantity", default: 1
     t.integer "product_id"
     t.integer "cart_id"
-    t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

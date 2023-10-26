@@ -22,6 +22,8 @@ class OrdersController < ApplicationController
          )
          cart_product.destroy
       end
+      Cart.destroy(session[:cart_id])
+      session[:cart_id]=nil
 
       redirect_to @order, notice: 'Order was successfully created.'
    else

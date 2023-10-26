@@ -2,9 +2,20 @@
 <h1>Carts#show</h1>
 <p>Find me in app/views/carts/show.html.erb</p>
 
+<% if flash.any? %>
+<% flash.each do |type, msg| %>
+<div>
+<%= msg %>
+</div>
+<% end %>
+<% end %>
+
+
+
+
 <ul>
   <% @cart.cart_products.each do |cp| %>
-    <li> Product: <%= cp.product.name %>  Price: <%= cp.product.price %> Quantity<%= cp.quantity%></li>
+    <li> Product: <%= cp.product.name %>  |Price: <%= cp.product.price %> |Quantity: <%= cp.quantity%> |TotalPrice: <%= cp.total_price %></li>
 
     <ul>
       <li>
@@ -16,7 +27,8 @@
       </li>
     </ul>
   <%end%>
-
-  <%= link_to "Place Order", new_order_path %>
+  <br>
+  <strong>Total Cart Price: <%= @cart.cart_price%>
+  <%= link_to "Place Order", new_order_path %></strong>
 
 </ul>
