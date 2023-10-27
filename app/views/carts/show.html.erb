@@ -3,11 +3,9 @@
 <p>Find me in app/views/carts/show.html.erb</p>
 
 <% if flash.any? %>
-<% flash.each do |type, msg| %>
-<div>
-<%= msg %>
-</div>
-<% end %>
+  <% flash.each do |type, msg| %>
+  <div><%= msg %></div>
+  <% end %>
 <% end %>
 
 

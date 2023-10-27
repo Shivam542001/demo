@@ -7,8 +7,11 @@
 
 Oid:<%= @order.id %>
 Name: <%= @order.name %>
-Address: <%= @order.address %><br>
+Address: <%= @order.address %>
+Phone: <%= @order.phone %>
+Total Amount: <%= @order.order_amount %>
 
+<br>
 Products: 
 <ul>
 <% @order.order_items.each do |order_item| %>

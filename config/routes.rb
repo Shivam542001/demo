@@ -24,15 +24,16 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :orders
+  resources :orders, :only => [:index, :show, :new, :create]
+
 
 
 
   get 'cart_products/:id/add', to: "cart_products#add_quantity", as: "cart_product_add"
-  get 'cart_products/:id/reduce' => "cart_products#reduce_quantity", as: "cart_product_reduce"
-  post 'cart_products' => "cart_products#create"
-  get 'cart_products/:id' => "cart_products#show", as: "cart_product"
-  delete 'cart_products/:id' => "cart_products#destroy"
+  get 'cart_products/:id/reduce', to: "cart_products#reduce_quantity", as: "cart_product_reduce"
+  post 'cart_products', to: "cart_products#create"
+  get 'cart_products/:id', to: "cart_products#show", as: "cart_product"
+  delete 'cart_products/:id', to: "cart_products#destroy"
 
 
 
