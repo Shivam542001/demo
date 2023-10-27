@@ -15,6 +15,11 @@ Price: <%= @product.price%>
 <br>
 desc: <%= @product.description%>
 <br>
+<div>
+  <% if @product.image.attached? %>  
+  <%= image_tag  @product.image, style: "width:200px;height:200px;"%>
+  <% end %>
+</div>
 
 
 <%if current_user.admin? %>

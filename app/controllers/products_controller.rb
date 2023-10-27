@@ -1,8 +1,10 @@
 class ProductsController < ApplicationController
   before_action :req_admin, only: [:new, :create, :edit]
+  before_action :up_cateogry, only: :create
 
   def index
     @products = Product.all
+    @categories = Product.distinct.pluck(:category)
   end
 
   def show
@@ -38,7 +40,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :price, :quantity)
+    params.require(:product).permit(:name, :description, :price, :quantity, :image, :category)
   end
 
   def req_admin
@@ -48,4 +50,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def up_cateogry
+    product_params[:category].upcase!
+    # puts product_params[:category]
+    # puts "---------------------------------------------"
+  end
 end

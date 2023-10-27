@@ -16,6 +16,11 @@
   </div>
 
   <div>
+    <%= form.label :category %><br>
+    <%= form.text_field :category %>
+  </div>
+
+  <div>
     <%= form.label :price %><br>
     <%= form.number_field :price %>
   </div>
@@ -25,6 +30,11 @@
   <%= form.number_field :quantity %>
   </div>
 
+  <div>
+  <%= form.label :image %><br>
+  <%= form.file_field :image %>
+  </div>
+  <br>
   <div>
     <%= form.submit %>
   </div>

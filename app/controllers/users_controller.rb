@@ -16,10 +16,14 @@ class UsersController < ApplicationController
         # redirect_to users_url
       else
         # render "users/home_user"
-        render "products/index"
+        # render "products/index"
+        redirect_to products_path
       end
-    end
 
+      # render "products/index"
+    else
+      redirect_to new_user_session, error: "Please Login Before"
+    end
   end
 
 end

@@ -4,15 +4,18 @@ Rails.application.routes.draw do
   # get 'orders/show'
   # get 'orders/new'
   # post 'orders/new', to: "orders#create"
+  # get 'carts/show'
 
 
-  get 'carts/show'
   root 'users#home'
+  # root 'products#index'
 
   devise_for :users
 
   resources :users
   resources :products
+
+  get 'products/:category', to: "product#index", as: "product_category"
 
   get '/users/home', to: 'users#home'
 
