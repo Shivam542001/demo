@@ -1,21 +1,17 @@
 Rails.application.routes.draw do
 
-  # get 'orders/index'
-  # get 'orders/show'
-  # get 'orders/new'
-  # post 'orders/new', to: "orders#create"
-  # get 'carts/show'
 
-
-  root 'users#home'
+  root "users#home"
   # root 'products#index'
 
   devise_for :users
-
-  resources :users
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  
   resources :products
 
-  get 'products/:category', to: "product#index", as: "product_category"
+  get 'products/category/:category', to: "products#category", as: "product_category"
 
   get '/users/home', to: 'users#home'
 
@@ -39,7 +35,4 @@ Rails.application.routes.draw do
   delete 'cart_products/:id', to: "cart_products#destroy"
 
 
-
-  # Defines the root path route ("/")
-  # root "posts#index"
 end

@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :require_products, only: [:new, :create]
+  # before_action :set_category
 
 
 
@@ -49,6 +50,10 @@ class OrdersController < ApplicationController
       redirect_to cart_path(@current_cart)
     end
   end
+
+  # def set_category
+  #   @categories = Product.distinct.pluck(:category)
+  # end
 
 
 end

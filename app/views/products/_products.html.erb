@@ -1,0 +1,27 @@
+
+
+
+<div class="d-flex flex-wrap justify-content-center align-items-center">
+  <% @products.each do |product| %>
+
+    <div class="card shadow m-3" style="width: 15rem;">
+      <% if product.image.attached? %>
+        <%= image_tag product.image, class:"card-img-top" ,style:"height:10rem" %>
+          <%else%>
+            <%= image_tag "default.jpg" , class:"card-img-top",style:"height:10rem" %>
+              <%end%>
+                <div class="card-body text-center">
+                  <h5 class="card-title text-capitalize">
+                    <%=product.name%>
+                  </h5>
+                 
+
+
+                  <%= link_to "View More" , product_path(product), class: "btn btn-primary" %>
+                </div>
+    </div>
+
+  <%end%>
+</div>
+
+ 

@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :req_admin, only: [:new, :create, :edit]
   before_action :up_cateogry, only: :create
+  before_action :set_category
 
   def index
     @products = Product.all
@@ -10,6 +11,11 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @cart = @current_cart
+  end
+
+  def category
+    @products = Product.where(category: params[:category])
+    # @categories = Product.distinct.pluck(:category)
   end
 
   def new
@@ -38,6 +44,7 @@ class ProductsController < ApplicationController
   end
 
 
+
   private
   def product_params
     params.require(:product).permit(:name, :description, :price, :quantity, :image, :category)
@@ -49,10 +56,14 @@ class ProductsController < ApplicationController
       redirect_to products_path
     end
   end
-
+  
   def up_cateogry
     product_params[:category].upcase!
     # puts product_params[:category]
     # puts "---------------------------------------------"
+  end
+  
+  def set_category
+    @categories = Product.distinct.pluck(:category)
   end
 end

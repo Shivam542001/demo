@@ -1,11 +1,4 @@
 class UsersController < ApplicationController
-  def index 
-
-    @users = User.all
-  
-  
-  end
-
 
   def home 
     @products = Product.all

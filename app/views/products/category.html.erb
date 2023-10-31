@@ -1,17 +1,13 @@
-Welcome use  <%= current_user %>
-
-Products are coming soon
-
+<% if false %>
+<ul>
 <% @products.each do |product| %>
+  <li>
   <%= link_to product.name, product_path(product) %>
-  <br>
+  </li>
 <% end %>
-  
+</ul>
+
+<%end%>
 
 
-
-go to cart...... 
-
-
-
-<br>
+<%= render "products/products" %>

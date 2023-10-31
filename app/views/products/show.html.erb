@@ -1,29 +1,132 @@
-<%= link_to "Home", root_path %>
-<%if !current_user.admin? %>
-<%= link_to "go to cart", cart_path(@cart) %>
-<%end%>
-<br>
-
 
 Showing Product
 <br>
-id: <%= @product.id %>
-<br>
-name: <%= @product.name %>
-<br>
-Price: <%= @product.price%>
-<br>
-desc: <%= @product.description%>
-<br>
-<div>
-  <% if @product.image.attached? %>  
-  <%= image_tag  @product.image, style: "width:200px;height:200px;"%>
-  <% end %>
+<%if false%>
+  id: <%= @product.id %>
+  <br>
+  name: <%= @product.name %>
+  <br>
+  Price: <%= @product.price%>
+  <br>
+  desc: <%= @product.description%>
+  <br>
+  <div>
+    <% if @product.image.attached? %>  
+    <%= image_tag  @product.image, style: "width:200px;height:200px;"%>
+    <% end %>
+  </div>
+
+
+  <%if current_user.admin? %>
+  <%= link_to "Edit", edit_product_path(@product) %>
+  <% else %>
+  <%= button_to "add to cart", cart_products_path(:product_id => @product.id) %>
+  <%end %>
+
+  <%if false%>
+
+  <div class="card mb-3">
+    <% if @product.image.attached? %>
+    <img src=<%=rails_blob_url(@product.image)%>, class="card-img-top", alt="Card image cap", style="width:400px;">
+    <%else%>
+      <%= image_tag "default.jpg", class: "card-img-top" %>
+    <%end%> 
+
+      <div class="card-body">
+        <h5 class="card-title"><%=@product.name%></h5>
+        <p class="card-text"><%=@product.description%></p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+  </div>
+
+
+
+
+
+  <div class="card text-white bg-secondary mb-3">
+  <div class="col">
+  <div class="card text-center" style="width: 25rem;">
+
+    <% if @product.image.attached? %>  
+      <%= image_tag product.image, class:"card-img-top" ,style: "width: 25rem;" %>
+    <%else%>
+      <%= image_tag "default.jpg", class: "card-img-top", style: "width: 18rem;height: 18rem;" %>
+    <%end%> 
+
+    <div class="card-body">
+      <h5 class="card-title"> <%=@product.name%> </h5>
+    </div>
+
+  </div>
+  </div>
+
+
+  </div>
+
+  <%end%>
+
+<%end%>
+
+
+
+
+<div class="container ">
+  <div class="row ">
+
+    <div class="col align-items-center text-center">
+      <%if @product.image.attached? %>  
+          <%= image_tag @product.image, class: "rounded float-left", style: "max-width: 25rem;"%>
+      <%else%>
+          <%= image_tag "default.jpg", class: "rounded float-left", style: "max-width: 25rem;"%>
+      <%end%>
+      <br>
+    <%= button_to "add to cart", cart_products_path(:product_id => @product.id) %>
+    
+    </div>
+    
+    <div class="col text-start align" >
+    
+      <p class="text-capitalize fs-1">
+      <%= @product.name %>
+      </p>
+      
+      <p>
+      Price: <%= @product.price%>
+      </p>
+      
+      <p>
+      desc: <%= @product.description%>
+      </p>
+    
+    </div>
+  </div>
 </div>
 
 
-<%if current_user.admin? %>
-<%= link_to "Edit", edit_product_path(@product) %>
-<% else %>
-<%= button_to "add to cart", cart_products_path(:product_id => @product.id) %>
-<%end %>
+
+
+<% if false%>
+
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag "default.jpg", class: "d-block w-100", alt: "...", style: "max-width: 25rem;"%>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "default.jpg", class: "d-block w-100", alt: "...", style: "max-width: 25rem;"%>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "default.jpg", class: "d-block w-100", alt: "...", style: "max-width: 25rem;"%>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<%end%>

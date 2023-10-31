@@ -1,12 +1,17 @@
 class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
+  before_action :set_category
   
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   
+
+  
+  
   
   before_action :current_cart
+  
   def current_cart
     if session[:cart_id]
       @current_cart ||= Cart.find(session[:cart_id])
@@ -22,6 +27,9 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
        devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password)}
        devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password)}
+  end
+  def set_category
+    @categories = Product.distinct.pluck(:category)
   end
 
 end
