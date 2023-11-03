@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
   before_action :req_admin, only: [:new, :create, :edit]
   before_action :up_cateogry, only: :create
-  before_action :set_category
+  # before_action :set_category
 
   def index
     @products = Product.all
-    @categories = Product.distinct.pluck(:category)
+    # @categories = Product.distinct.pluck(:category)
   end
 
   def show
@@ -51,19 +51,19 @@ class ProductsController < ApplicationController
   end
 
   def req_admin
-    unless current_user.admin?
-      flash[:error] = "You are not admin"
-      redirect_to products_path
+    if user_signed_in?
+      unless current_user.admin?
+        flash[:error] = "You are not admin"
+        redirect_to products_path
+      end
     end
   end
   
   def up_cateogry
     product_params[:category].upcase!
-    # puts product_params[:category]
-    # puts "---------------------------------------------"
   end
   
-  def set_category
-    @categories = Product.distinct.pluck(:category)
-  end
+  # def set_category
+  #   @categories = Product.distinct.pluck(:category)
+  # end
 end

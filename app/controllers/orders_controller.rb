@@ -1,11 +1,15 @@
 class OrdersController < ApplicationController
   before_action :require_products, only: [:new, :create]
-  # before_action :set_category
+  before_action :req_user, only: [:create, :new]
 
 
 
   def index
-    @orders = Order.all
+    if current_user.admin?
+      @orders = Order.all
+    else
+      @orders = current_user.orders
+    end
   end
 
   def show
@@ -41,7 +45,7 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:name, :address, :phone).merge(order_amount: current_cart.cart_price)
+      params.require(:order).permit(:name, :address, :phone).merge(user_id:current_user.id, order_on:Time.now.to_date, order_amount: current_cart.cart_price)
    end
 
    def require_products
@@ -54,6 +58,13 @@ class OrdersController < ApplicationController
   # def set_category
   #   @categories = Product.distinct.pluck(:category)
   # end
+
+  private
+    def req_user
+      if !user_signed_in? || current_user.admin?
+        redirect_to root_path
+      end
+    end
 
 
 end

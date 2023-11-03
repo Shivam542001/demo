@@ -1,25 +1,29 @@
+<div class="container border shadow mx-auto p-4 my-3" style="width:25rem;">
 
 
-<h1>Orders#new</h1>
-<p>Find me in app/views/orders/new.html.erb</p>
+<h1>Order Details</h1>
+<div class="row">
 
 <%= form_with model: @order do |form| %>
-  <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :name, class: "control-label" %><br>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :address %><br>
-    <%= form.text_area :address %><br>
+  <div class="form-group">
+    <%= form.label :address, class: "control-label" %><br>
+    <%= form.text_area :address, class: "form-control" %><br>
   </div>
 
-  <div>
-    <%= form.label :phone %><br>
-    <%= form.text_field :phone %>
+  <div class="form-group">
+    <%= form.label :phone, class: "control-label" %><br>
+    <%= form.text_field :phone, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit "sumbit", class: 'btn btn-primary my-3' %>
   </div>
 <% end %>
+
+</div>
+</div>

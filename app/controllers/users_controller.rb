@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
     if user_signed_in?
       if current_user.admin?        
-        render "users/home_admin"
+        redirect_to products_path
         # redirect_to users_url
       else
         # render "users/home_user"

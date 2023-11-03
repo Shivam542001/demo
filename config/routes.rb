@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  root "users#home"
+  root "products#index"
   # root 'products#index'
 
   devise_for :users
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get 'products/category/:category', to: "products#category", as: "product_category"
 
-  get '/users/home', to: 'users#home'
+  # get '/users/home', to: 'users#home'
 
   get 'carts/:id', to: "carts#show", as: "cart"
   delete 'carts/:id', to: "carts#destroy"

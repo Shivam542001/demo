@@ -1,5 +1,4 @@
-
-
+<section class=".bg-light">
 
 <div class="d-flex flex-wrap justify-content-center align-items-center">
   <% @products.each do |product| %>
@@ -15,13 +14,10 @@
                     <%=product.name%>
                   </h5>
                  
-
-
                   <%= link_to "View More" , product_path(product), class: "btn btn-primary" %>
                 </div>
     </div>
-
   <%end%>
 </div>
 
- 
+ </section>

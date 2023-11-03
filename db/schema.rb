@@ -67,7 +67,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_27_113713) do
     t.string "name"
     t.text "address"
     t.string "phone"
+    t.integer "user_id"
     t.integer "order_amount"
+    t.date "order_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
