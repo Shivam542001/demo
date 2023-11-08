@@ -2,7 +2,9 @@ class CartProductsController < ApplicationController
   before_action :authenticate_user!
   
   def create
+    # debugger
     chosen_product = Product.find(params[:product_id])
+    
     current_cart = @current_cart
   
     if current_cart.products.include?(chosen_product)
@@ -17,12 +19,9 @@ class CartProductsController < ApplicationController
     @cart_product.save
     redirect_to cart_path(current_cart)
   end
-  
-
 
   def add_quantity
     @cart_product = CartProduct.find(params[:id])
-    
     if @cart_product.product.quantity>@cart_product.quantity
       @cart_product.quantity += 1
       @cart_product.save
@@ -49,6 +48,5 @@ class CartProductsController < ApplicationController
     @cart_product.destroy
     redirect_to cart_path(@current_cart)
   end  
-
 
 end

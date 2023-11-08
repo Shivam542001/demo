@@ -21,14 +21,11 @@ class OrdersController < ApplicationController
   end
 
   def create
+    # debugger
     @order = Order.new(order_params)
-    if @order.save
-       
+    if @order.save  
       current_cart.cart_products.each do |cart_product|
-         @order.order_items.create!(         
-            product_id: cart_product.product_id,
-            quantity: cart_product.quantity 
-         )
+         @order.order_items.create!(product_id: cart_product.product_id, quantity: cart_product.quantity)
          @product=cart_product.product
          @product.quantity-=cart_product.quantity
          @product.save
@@ -55,9 +52,6 @@ class OrdersController < ApplicationController
     end
   end
 
-  # def set_category
-  #   @categories = Product.distinct.pluck(:category)
-  # end
 
   private
     def req_user

@@ -1,0 +1,391 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/developer/dise/mede/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          32,
+          null,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/helpers/cart_products_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/helpers/carts_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/helpers/orders_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/helpers/products_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/helpers/users_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/controllers/cart_products_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          2,
+          1,
+          1,
+          null,
+          1,
+          null,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          28,
+          18,
+          14,
+          null,
+          18,
+          4,
+          4,
+          null,
+          18,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          0,
+          null,
+          1,
+          22,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/controllers/carts_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          2,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/controllers/orders_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          3,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/controllers/products_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          2,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          4,
+          null,
+          null,
+          1,
+          4,
+          4,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/models/cart_product.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/models/cart.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          4,
+          2,
+          null,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/models/order_item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/models/order.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/home/developer/dise/mede/app/models/product.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      }
+    },
+    "timestamp": 1699440280
+  }
+}

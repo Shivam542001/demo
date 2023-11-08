@@ -1,19 +1,14 @@
 Rails.application.routes.draw do
-
-
   root "products#index"
-  # root 'products#index'
 
   devise_for :users
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   
-  resources :products
-
+  resources :products, except: :destroy
   get 'products/category/:category', to: "products#category", as: "product_category"
 
-  # get '/users/home', to: 'users#home'
 
   get 'carts/:id', to: "carts#show", as: "cart"
   delete 'carts/:id', to: "carts#destroy"
@@ -23,9 +18,7 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  resources :orders, :only => [:index, :show, :new, :create]
-
-
+  resources :orders, only: [:index, :show, :new, :create]
 
 
   get 'cart_products/:id/add', to: "cart_products#add_quantity", as: "cart_product_add"

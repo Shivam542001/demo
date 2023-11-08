@@ -2,9 +2,9 @@ class CartsController < ApplicationController
   before_action :req_user
 
   def show
-    @cart = @current_cart
+    # @cart = @current_cart
+    @cart = Cart.find(params[:id])
   end
-
 
   private
     def req_user

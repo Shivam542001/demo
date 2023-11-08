@@ -7,5 +7,4 @@ class Cart < ApplicationRecord
     self.cart_products.each{|cp| sum+=cp.total_price}
     sum
   end
-
 end
