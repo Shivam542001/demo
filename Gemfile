@@ -73,3 +73,6 @@ end
 gem "devise", "~> 4.9"
 
 gem "cssbundling-rails"
+
+gem 'jwt'
+gem 'bcrypt'
