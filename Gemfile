@@ -76,3 +76,5 @@ gem "cssbundling-rails"
 
 gem 'jwt'
 gem 'bcrypt'
+
+gem 'ransack'

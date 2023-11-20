@@ -4,8 +4,10 @@ class ProductsController < ApplicationController
   # before_action :set_category
 
   def index
-    @products = Product.all
+    # @products = Product.all
     # @categories = Product.distinct.pluck(:category)
+    # @q = Product.ransack(params[:q])
+    # @products = @q.result
   end
 
   def show

@@ -5,9 +5,9 @@ class Api::V1::CartsController < ApiController
 
 
   def show
-    @cart = Cart.find_by(id: params[:id])
-    if @cart
-      render json: @cart.cart_products
+    cart = Cart.find_by(id: params[:id])
+    if cart
+      render json: cart.cart_products, status: :ok
     else
       render json: { error: 'Cart Not Found' }, status: :not_found
     end

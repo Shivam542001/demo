@@ -6,10 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   
 
-  
-  
-  
   before_action :current_cart 
+  before_action :set_search 
   
   def current_cart
     if user_signed_in? && !current_user.admin?
@@ -31,6 +29,11 @@ class ApplicationController < ActionController::Base
   end
   def set_category
     @categories = Product.distinct.pluck(:category)
+  end
+
+  def set_search
+    @q = Product.ransack(params[:q])
+    @products = @q.result
   end
 
 end
