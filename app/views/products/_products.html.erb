@@ -5,7 +5,7 @@
 
     <div class="card shadow m-3" style="width: 15rem;">
       <% if product.image.attached? %>
-        <%= image_tag product.image, class:"card-img-top" ,style:"height:10rem" %>
+        <%= image_tag product.image, class:"card-img-top p-1" ,style:"height:10rem" %>
           <%else%>
             <%= image_tag "default.jpg" , class:"card-img-top",style:"height:10rem" %>
               <%end%>

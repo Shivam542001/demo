@@ -32,11 +32,12 @@ class OrdersController < ApplicationController
          cart_product.destroy
       end
       Cart.destroy(session[:cart_id])
+      OrderNotificationMailer.create_notification(@order).deliver_now
       session[:cart_id]=nil
 
       redirect_to @order, notice: 'Order was successfully created.'
    else
-       redirect_to root_path, notice: 'Something went wrong saving the order.'
+      render :new, status: :unprocessable_entity
    end 
   end
 
@@ -59,6 +60,5 @@ class OrdersController < ApplicationController
         redirect_to root_path
       end
     end
-
 
 end

@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rails-controller-testing'
   gem 'simplecov', require: false
+  gem "letter_opener"
 end
 
 group :development do

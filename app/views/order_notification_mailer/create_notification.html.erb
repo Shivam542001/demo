@@ -1,0 +1,18 @@
+<h1>Order Successfully created</h1>
+
+<p>Order on: <%=@order.order_on%></p>
+<p>Name: <%=@order.name%></p>
+<p>Address: <%=@order.address%></p>
+<p>Phone: <%=@order.phone%></p>
+<p>Amount: <%=@order.order_amount%></p>
+
+
+
+-------------------------------------------------
+<p class="font-weight-bold">
+  <%@order.attributes.each do |k,v|%> 
+  <%="#{k}: #{v}"%>
+  <br>
+  <%end%>
+</p>
+-------------------------------------------------
